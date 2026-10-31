@@ -24,8 +24,8 @@ fun PostScreen(posts:List<Post>){
 @Composable
 fun PostItem(post: Post) {
     Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = post.title, style = MaterialTheme.typography.titleMedium)
-        Text(text = post.body, style = MaterialTheme.typography.displayMedium)
+        Text(text = post.title, style = MaterialTheme.typography.titleLarge)
+        Text(text = post.body, style = MaterialTheme.typography.titleMedium)
 
 
     }

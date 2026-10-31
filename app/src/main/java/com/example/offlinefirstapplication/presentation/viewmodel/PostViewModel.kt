@@ -9,6 +9,7 @@ import com.example.offlinefirstapplication.presentation.screen.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
@@ -28,7 +29,7 @@ class PostViewModel @Inject constructor(
         }
     }
 
-    val postUiState: Flow<UiState<List<Post>>> =
+    val postUiState: StateFlow<UiState<List<Post>>> =
         fetchPostUseCase().map { data ->
             if (data.isEmpty())
                 UiState.Empty
